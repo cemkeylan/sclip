@@ -1,0 +1,43 @@
+sclip
+=====
+
+dumb clipboard manager with 10 lines 
+of POSIX shell code (excluding whitespace)
+
+
+Features
+--------
+
+* Pipe into sclip to add text to clipboard
+* Can pipe the text being copied to stdout
+* Very scriptable
+* Literally shorter than this README
+* Works both in X and TTY
+
+
+Non-Features
+-------------
+
+* Does not use a complex buffer, writes into a file
+* Does not integrate with the selection and 
+    clipboard defined by the Free Desktop Specification
+
+
+Usage Examples
+--------------
+
+
+[create a dmenu after copying text]
+
+  $ printf "list item 1\\nlist item 2\\n" | sclip -o | dmenu
+
+
+[copy sclip to xclip or vice versa]
+
+  $ sclip -p | xclip -selection clipboard
+  $ xclip -out | sclip
+
+
+Author
+------
+Cem Keylan
